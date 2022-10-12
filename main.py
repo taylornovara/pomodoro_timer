@@ -16,11 +16,11 @@ GREEN = '#59CE8F'
 WHITE = '#ffffff'
 FONT_NAME = ""
 # 25 minutes
-WORK_MIN = 1
+WORK_MIN = 25
 # 5 minutes
-SHORT_BREAK_MIN = 1
+SHORT_BREAK_MIN = 5
 # 15 minutes
-LONG_BREAK_MIN = 1
+LONG_BREAK_MIN = 15
 reps = 0
 timer = None
 
@@ -32,9 +32,9 @@ def start_timer():
     global reps
     reps += 1
 
-    work_sec = WORK_MIN * 15
-    short_break_sec = SHORT_BREAK_MIN * 5
-    long_break_sec = LONG_BREAK_MIN * 10
+    work_sec = WORK_MIN * 60
+    short_break_sec = SHORT_BREAK_MIN * 60
+    long_break_sec = LONG_BREAK_MIN * 60
 
     if reps % 8 == 0:
         countdown(long_break_sec)
