@@ -25,6 +25,7 @@ timer = None
 # Functions
 
 def start_timer():
+    """Starts the timer countdown based on the number of reps."""
     global reps
     reps += 1
 
@@ -44,7 +45,7 @@ def start_timer():
 
 
 def countdown(count):
-    """A function that receives the length and counts down to zero. Restarts as soon as it hits zero.
+    """A function that receives the time and counts down to zero. Restarts as soon as it hits zero.
     """
     # Stores the minutes and seconds into their own variables.
     minute = math.floor(count / 60)
@@ -59,7 +60,7 @@ def countdown(count):
     else:
         start_timer()
         # Divide reps by 2 to get the number of work sessions, add a check mark to marks, and configure check_marks
-        # label
+        # label.
         marks = ""
         work_sessions = math.floor(reps / 2)
         for _ in range(work_sessions):
