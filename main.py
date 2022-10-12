@@ -38,10 +38,10 @@ def start_timer():
 
     if reps % 8 == 0:
         countdown(long_break_sec)
-        title_label.config(text="Break", fg=GREEN, bg=LITE_RED, font=(FONT_NAME, 40))
+        title_label.config(text="Long Break", fg=GREEN, bg=LITE_RED, font=(FONT_NAME, 40))
     elif reps % 2 == 0:
         countdown(short_break_sec)
-        title_label.config(text="Break", fg=YELLOW)
+        title_label.config(text="Short Break", fg=YELLOW)
     elif reps % 2 != 0:
         countdown(work_sec)
         title_label.config(text="Work", fg=RED, bg=LITE_RED, font=(FONT_NAME, 40))
@@ -87,6 +87,7 @@ def reset_timer():
 window = tkinter.Tk()
 window.title("Pomodoro Timer")
 window.config(padx=100, pady=50, bg=LITE_RED)
+window.resizable(False, False)
 
 # Title
 title_label = tkinter.Label(text='TIMER', fg=WHITE, bg=LITE_RED, font=(FONT_NAME, 40))
