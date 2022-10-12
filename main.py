@@ -15,8 +15,11 @@ DARK_GREEN = '#369B46'
 GREEN = '#59CE8F'
 WHITE = '#ffffff'
 FONT_NAME = ""
+# 25 minutes
 WORK_MIN = 1
+# 5 minutes
 SHORT_BREAK_MIN = 1
+# 15 minutes
 LONG_BREAK_MIN = 1
 reps = 0
 timer = None
@@ -58,7 +61,9 @@ def countdown(count):
         global timer
         timer = window.after(1000, countdown, count - 1)
     else:
-        start_timer()
+        window.bell()
+        window.attributes('-topmost', 1)
+        window.attributes('-topmost', 0)
         # Divide reps by 2 to get the number of work sessions, add a check mark to marks, and configure check_marks
         # label.
         marks = ""
@@ -87,9 +92,11 @@ window.config(padx=100, pady=50, bg=LITE_RED)
 title_label = tkinter.Label(text='TIMER', fg=WHITE, bg=LITE_RED, font=(FONT_NAME, 40))
 title_label.grid(column=1, row=0)
 
-# Creates our background image and txt. Sets both to the center of the window
+# Creates our background image and txt, sets both to the center of the window. Adds tomato icon
 canvas = tkinter.Canvas(width=200, height=224, bg=LITE_RED, highlightthickness=0)
-img = tkinter.PhotoImage(file="tomato.png")
+img = tkinter.PhotoImage(file="tomato_img.png")
+icon = tkinter.PhotoImage(file="tomato_icon.png")
+window.iconphoto(False, icon)
 canvas.create_image(100, 112, image=img)
 timer_text = canvas.create_text(100, 130, text="00:00", font=(FONT_NAME, 35, "bold"))
 canvas.grid(column=1, row=1)
@@ -102,7 +109,7 @@ reset_button = tkinter.Button(text="Reset", font=(FONT_NAME, 18), bd=0, command=
 reset_button.grid(column=2, row=2)
 
 # Check Marks
-check_marks = tkinter.Label(bg=LITE_RED, fg=RED, font=(FONT_NAME, 50))
+check_marks = tkinter.Label(bg=LITE_RED, fg=RED, font=(FONT_NAME, 40))
 check_marks.grid(column=1, row=3)
 
 # Keeps program window open
