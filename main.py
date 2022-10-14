@@ -1,6 +1,6 @@
 """
 
-A simple Pomodoro Timer app using tkinter for the GUI
+A simple Pomodoro Timer app using tkinter for the GUI. Did this work?
 
 """
 import tkinter
