@@ -1,6 +1,6 @@
 """
 
-A simple Pomodoro Timer app using tkinter for the GUI. Did this work?
+A simple Pomodoro Timer app using tkinter for the GUI.
 
 """
 import tkinter
@@ -13,7 +13,7 @@ RED = "#FF5D5D"
 YELLOW = "#FFE3A9"
 GREEN = '#59CE8F'
 WHITE = '#ffffff'
-FONT_NAME = ""
+FONT_NAME = "Modern"
 # 25 minutes
 WORK_MIN = 25
 # 5 minutes
@@ -82,21 +82,21 @@ def reset_timer():
     reps = 0
 
 
-# Creates program window
+# Creates program window, Changes tomato icon
 window = tkinter.Tk()
 window.title("Pomodoro Timer")
 window.config(padx=100, pady=50, bg=LITE_RED)
 window.resizable(False, False)
+icon = tkinter.PhotoImage(file="tomato_icon.png")
+window.iconphoto(False, icon)
 
 # Title
 title_label = tkinter.Label(text='TIMER', fg=WHITE, bg=LITE_RED, font=(FONT_NAME, 40))
 title_label.grid(column=1, row=0)
 
-# Creates our background image and txt, sets both to the center of the window. Adds tomato icon
+# Creates our background image and txt, sets both to the center of the window.
 canvas = tkinter.Canvas(width=200, height=224, bg=LITE_RED, highlightthickness=0)
 img = tkinter.PhotoImage(file="tomato_img.png")
-icon = tkinter.PhotoImage(file="tomato_icon.png")
-window.iconphoto(False, icon)
 canvas.create_image(100, 112, image=img)
 timer_text = canvas.create_text(100, 130, text="00:00", font=(FONT_NAME, 35, "bold"))
 canvas.grid(column=1, row=1)
