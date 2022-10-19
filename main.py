@@ -17,9 +17,9 @@ FONT_NAME = "Modern"
 # 25 minutes
 WORK_MIN = 25
 # 5 minutes
-SHORT_BREAK_MIN = 5
+SHORT_BREAK_MIN = 10
 # 15 minutes
-LONG_BREAK_MIN = 15
+LONG_BREAK_MIN = 25
 reps = 0
 timer = None
 
